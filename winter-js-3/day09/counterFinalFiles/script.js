@@ -1,60 +1,68 @@
-/**
- * Don't know where to start? Here are some pointers,
- *
- * 1. Have you checkout the index.html in Firefox?
- * 2. Let's start with some button listeners to count up and down the counter.
- * 3. Then we will accept user input to set our counter goal.
- * 4. And think about how we will alert the celebration message to user when the
- * goal is reached.
- * 5. Bonus: Reset the goal once it's reached.
- */
-console.log('hey');
+$(function () {
+  /**
+   * Don't know where to start? Here are some pointers,
+   *
+   * 1. Have you checkout the index.html in Firefox?
+   * 2. Let's start with some button listeners to count up and down the counter.
+   * 3. Then we will accept user input to set our counter goal.
+   * 4. And think about how we will alert the celebration message to user when the
+   * goal is reached.
+   * 5. Bonus: Reset the goal once it's reached.
+   */
+  console.log('hey');
 
-let counter = 0;
-let goal = null;
+  // Cache selectors
+  const $goal = $('#goal');
+  const $submitButton = $('input[type="submit');
+  const $counter = $('.counter');
 
-$('#subtract').on('click', function () {
-  --counter;
-  renderCounter();
-  checkGoal();
-});
+  let counter = 0;
+  let goal = null;
 
-$('#add').on('click', function () {
-  ++counter;
-  $('.counter').text(counter);
-  renderCounter();
-  checkGoal();
-});
+  $('#subtract').on('click', function () {
+    --counter;
+    renderCounter();
+    checkGoal();
+  });
 
-function renderCounter() {
-  $('.counter').text(counter);
-}
+  $('#add').on('click', function () {
+    ++counter;
+    $counter.text(counter);
+    renderCounter();
+    checkGoal();
+  });
 
-function checkGoal() {
-  if (counter === goal) {
-    const $message = $('<h2>').text('Congrats, the goal has been reached!');
-    console.log($message);
-    $('.wrapper').first().prepend($message);
-    resetGoal();
+  function renderCounter() {
+    $counter.text(counter);
   }
-}
 
-function resetGoal() {
-  counter = 0;
-  goal = null;
-  $('#goal').val('');
-  $('#goal').removeClass('set');
-  $('input[type="submit"]').removeClass('submitted');
-}
+  function checkGoal() {
+    if (counter === goal) {
+      const $message = $('<h2>').text('Congrats, the goal has been reached!');
+      console.log($message);
+      $('.wrapper').first().prepend($message);
+      resetGoal();
+    }
+  }
 
-$('form').on('submit', function (e) {
-  e.preventDefault();
-  goal = +$('#goal').val();
+  function resetGoal() {
+    counter = 0;
+    goal = null;
+    $goal.val('');
+    $goal.removeClass('set');
+    $submitButton.removeClass('submitted');
+  }
 
-  $('#goal').addClass('set');
-  $('input[type="submit"]').addClass('submitted');
-});
+  $('form').on('submit', function (e) {
+    e.preventDefault();
+    goal = +$goal.val();
 
-$('#goal').on('focus', function () {
-  $('h2').remove();
+    $goal.addClass('set');
+    $submitButton.addClass('submitted');
+  });
+
+  $goal.on('focus', function () {
+    $('h2').remove();
+    $counter.text(0);
+  });
 });
