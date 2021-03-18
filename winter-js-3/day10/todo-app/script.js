@@ -39,15 +39,7 @@ $(function () {
     $list.append($item);
   }
 
-  // delegate event to parent element! => now you can separate event binding from renderer!
-  // $('ul').on('click', function (e) {
-  //   $(e.target)
-  //     .toggleClass('completed')
-  //     .find('span')
-  //     .toggleClass(['todo', 'done']);
-  // });
-
-  // or you can pass target element as the second argument
+  // you can pass target element as the second argument and jQuery will bind the handler to the selected element!
   $('ul').on('click', 'li', function () {
     $(this).toggleClass('completed').find('span').toggleClass(['todo', 'done']);
   });
