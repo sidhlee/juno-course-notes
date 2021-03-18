@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>It's the FINAL COUNTDOWN!</title>
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background: #3498db;
+      transition: all 0.2s;
+    }
+
+    .countdown {
+      text-align: center;
+    }
+
+    .seconds {
+      font-size: 350px;
+      color: white;
+      text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="countdown">
+    <span class="seconds"></span>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+
+    let seconds = 15;
+
+    const countdown = window.setInterval(function () {
+      // Update the span text with the number of seconds
+      $('span').text(seconds);
+      // Update the browsers tab to reflect the current time  + "Seconds Left!"
+      $(document).prop('title', `${seconds} left`)
+      // Decrement the number of seconds left
+      seconds = seconds - 1;
+      // if there are 10 or less seconds left, turn the background yellow. Use the css() method
+      if (seconds < 10) {
+        $('body').css('background', 'yellow')
+      }
+      // if there are 0 seconds left, turn the background red
+      if (seconds < 0) {
+        // second will be -1 after number 0 is rendered
+        $('body').css('background', 'red')
+        window.clearInterval(countdown)
+      }
+      // kill the timeout if we reach 0 so we don't see negative seconds
+      // For this you will need to research clearInterval();
+
+    }, 1000);
+
+  </script>
+</body>
+
+</html>
