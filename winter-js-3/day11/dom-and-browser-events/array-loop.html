@@ -35,8 +35,8 @@
 
       // BONUS: When you click a cheese, it should be removed from the list
 
-      $('ul').on('click', function (e) {
-        $(e.target).remove();
+      $('ul').on('click', 'li', function () {
+        $(this).remove();
       })
     });
   </script>

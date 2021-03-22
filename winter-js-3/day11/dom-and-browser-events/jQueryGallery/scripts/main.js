@@ -10,7 +10,19 @@
 // 🔥tip #2: the attr() jQuery method will be important
 
 $(function () {
-
   // code here
 
+  const $ul = $('ul');
+
+  // add data-main attribute with path to the larger image
+  $ul.children('li').attr('data-main', function () {
+    const src = $(this).find('img').attr('src');
+    const largerImagePath = src.replace('-small', '');
+    $(this).attr('data-main', largerImagePath);
+  });
+
+  $ul.on('click', 'li', function () {
+    const largerImagePath = $(this).attr('data-main');
+    $('img.main').attr('src', largerImagePath);
+  });
 });
