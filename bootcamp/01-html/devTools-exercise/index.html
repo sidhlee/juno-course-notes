@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Dev Tools Playground</title>
+    <!-- this loads in the font that we want to use from Google's Font API -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Teko&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- we use a wrapper to restrict our contents width and keep it to the center of the screen -->
+        <main class="content">
+            <!-- we can add extra styles to our content element for layout, doing our best not to overwrite or add styles to our wrapper -->
+            <header class="titleText">
+                <!-- a div to separate our titles from other content -->
+                <h1>Summer school learning</h1>
+                <h3>Fun environment where learning new skills are encouraged</h3>
+            </header>
+            <!-- grouping our description content for separate styling -->
+            <section class="description">
+                <!-- wrapping images in divs can help with styling, as long as you style the image to have a width or max-width of 100%, you then control the size of its parent container with more success -->
+                <div class="descriptionImageWrap">
+                    <img src="assets/left-image.jpg" alt="Three people looking at a computer, seen from above.">
+                </div>
+                <div class="descriptionContentWrap">
+                    <h2>About the Programs</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie. Mauris malesuada nisi sit amet augue accumsan tincidunt. Maecenas tincidunt, velit ac porttitor pulvinar, tortor eros facilisis libero, vitae commodo nunc quam et ligula. Ut nec ipsum sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer id nisi nec nulla luctus lacinia turpis. </p>
+                    <button>Read More</button>
+                </div>
+                
+            </section>
+            <!-- separate testimonials content from description -->
+            <section class="testimonials">
+                <h2>Quotes</h2>
+                <!-- notice how each quote is wrapped in a div with the class of 'quote' -->
+                <div class="quote">
+                    <blockquote>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie.” </blockquote>
+                    <span class="author">-- Mina R.</span>
+                </div>
+                <div class="quote">
+                    <blockquote>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit finibus et. Aenean eu enim justo. Vestibulum aliquam hendrerit molestie.” </blockquote>
+                    <span class="author">-- Larry A.</span>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <div class="wrapper">
+            <p>Contact us: 555-555-5555</p>
+            <p>Location: 123 Street Ave, Toronto, ON</p>
+        </div>
+    </footer>
+</body>
+</html>
