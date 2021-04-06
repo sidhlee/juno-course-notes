@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display and Positioning</title>
+  <style>
+    section.inline-blocks {
+      border: 1px solid rosybrown;
+    }
+
+    .inline-blocks div {
+      border: 1px solid greenyellow;
+      padding: 5px;
+      margin: 5px;
+      display: inline-block;
+      width: 200px;
+      height: 100px;
+    }
+
+    .hiding {
+      border: 1px solid seagreen;
+    }
+
+    .hiding p {
+      visibility: hidden;
+
+    }
+
+    .hiding div {
+      display: none;
+    }
+
+    .sr-only:not(:focus):not(:active) {
+      position: absolute !important;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px 1px 1px 1px);
+      /* IE6, IE7 */
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap;
+      /* added line */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Display and Positioning</h1>
+  <section class="inline-blocks">
+    <h2>Inline Block</h2>
+    <div>Block 1</div>
+    <div>Block 2</div>
+    <div>Block 3</div>
+    <div>Block 4</div>
+    <img src="https://placekitten.com/100/100" alt="kitty">
+  </section>
+
+  <section class="hiding">
+    <h2>Hiding Elements</h2>
+    <div>Can't see me</div>
+    <p>I'm not here</p>
+    <article class="sr-only">
+      Screen reader only
+    </article>
+
+  </section>
+</body>
+
+</html>
