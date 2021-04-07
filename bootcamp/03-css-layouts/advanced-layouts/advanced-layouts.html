@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Layouts</title>
+  <style>
+    :root {
+      --gutter: 15px;
+    }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .clearfix:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: '';
+      clear: both;
+      height: 0;
+    }
+
+    article {
+      float: left;
+    }
+
+    main {
+      background: powderblue;
+      padding: 1em 2em;
+    }
+
+
+    .article--long {
+      width: calc(75% - var(--gutter));
+      border: 1px solid olive;
+      margin-right: var(--gutter);
+    }
+
+    .article--short {
+      width: 25%;
+      border: 1px solid palevioletred;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="clearfix">
+    <div class="container">
+      <article class="article--long">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore similique
+        doloremque
+        atque nostrum? Illum
+        exercitationem qui consequuntur adipisci culpa doloribus cum, molestias omnis iure delectus est voluptates
+        reiciendis sint fuga repudiandae aliquam explicabo accusamus magnam ab deserunt rerum? Accusantium itaque
+        ducimus
+        ex blanditiis expedita doloremque esse suscipit quisquam consequatur repellat.</article>
+      <article class="article--short">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, dolores sunt culpa consequuntur beatae
+        assumenda, perferendis consectetur nam quis provident a voluptatem quisquam nisi similique!
+      </article>
+    </div>
+  </main>
+
+
+
+</body>
+
+</html>

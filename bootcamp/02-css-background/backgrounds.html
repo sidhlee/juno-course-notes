@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  body,
+  html {
+    box-sizing: border-box;
+    font-size: 125%;
+  }
+
+  body {
+    font-family: sans-serif;
+    background: url('./kylie-cheung--RsCNk9YW0E-unsplash.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    min-height: 2000px;
+  }
+
+  h1,
+  h2 {
+    margin: 0;
+  }
+
+
+  h3,
+  p {
+    margin: 1em 0 0;
+    line-height: 1.6;
+  }
+
+  header {
+    background: url('./kylie-cheung--RsCNk9YW0E-unsplash.jpg');
+    background-attachment: fixed;
+    height: 100vh;
+    font-size: 5rem;
+    text-align: center;
+    /* margin: 2em 0; */
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: grayscale(100%);
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+
+    display: block;
+    height: 2em;
+    width: 5em;
+    transform: translate(1.5em, 1em);
+    background: hsla(0, 59%, 46%, 0.706);
+  }
+
+  h1 {
+    padding: .25em .5em;
+    z-index: 10;
+    letter-spacing: -.11em;
+  }
+
+
+
+  section {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    max-width: 500px;
+    /* min-height: 800px; */
+    margin: 7em auto;
+    padding: 2em;
+  }
+
+  p {}
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    background: hsla(0, 59%, 46%, 0.706);
+    text-align: center;
+  }
+
+  section img {
+    margin-top: 1em;
+    width: 100%;
+  }
+</style>
+
+<body>
+  <header>
+    <h1>Lorem!</h1>
+  </header>
+  <section>
+    <h2>Ipsum</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius cum, aut autem neque iure delectus fugit ipsa unde
+      tempore quod veniam culpa omnis blanditiis aliquam alias nulla debitis aliquid. Cumque.</p>
+    <h3>Lorem ipsum dolor sit amet.</h3>
+    <img src="./lego.jpeg" alt="a busy street">
+  </section>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Layout and Float</title>
+  <style>
+    section .the-goods {
+      float: left;
+      width: 50%;
+    }
+
+    section aside {
+      float: left;
+      width: 50%;
+    }
+
+
+    section {
+      /* all children floated out of normal flow with parent height not specified -> collapse */
+      background: lightsalmon;
+      border: 1px solid red;
+      clear: left;
+    }
+
+    /* clearfix */
+    .clearfix:after {
+      visibility: hidden;
+      display: block;
+      content: " ";
+      clear: both;
+      height: 0;
+    }
+  </style>
+</head>
+
+
+<body>
+  <h1>CSS Layout and Float</h1>
+
+  <h2>Parent Collapse</h2>
+
+  <section>
+    <div class="the-goods">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. A doloribus magnam porro? Aspernatur perferendis cumque
+      excepturi, eaque corporis quis iusto fuga expedita aperiam, earum, ipsum deserunt odit nemo. Itaque quos cumque
+      laborum veritatis enim nisi aliquid id cum, in ipsum eaque? Eveniet nihil aspernatur repellendus ea nemo dolor
+      obcaecati ipsa.
+    </div>
+    <aside>
+      <h3>Did you know</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, itaque!</p>
+    </aside>
+
+  </section>
+
+  <section class="clearfix">
+    <div class="the-goods">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. A doloribus magnam porro? Aspernatur perferendis cumque
+      excepturi, eaque corporis quis iusto fuga expedita aperiam, earum, ipsum deserunt odit nemo. Itaque quos cumque
+      laborum veritatis enim nisi aliquid id cum, in ipsum eaque? Eveniet nihil aspernatur repellendus ea nemo dolor
+      obcaecati ipsa.
+    </div>
+    <aside>
+      <h3>Did you know</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, itaque!</p>
+    </aside>
+
+  </section>
+</body>
+
+</html>
