@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Simple Navigation</title>
+  <style>
+    ul {
+      margin: 0;
+      padding: 0;
+      background: pink;
+    }
+
+    ul li {
+      float: left;
+      list-style: none;
+      margin-right: 1rem;
+    }
+
+    .clearfix::after {
+      content: '';
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      clear: both;
+      height: 0;
+
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+      clip-path: inset(100%);
+      clip: rect(0 0 0 0);
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Provide skip link before nav -->
+  <a class="sr-only" href="#main-content">Skip to main</a>
+  <header>
+    <nav>
+      <ul class="clearfix">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    This is main content
+  </main>
+
+</body>
+
+</html>

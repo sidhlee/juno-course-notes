@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Before and After</title>
+
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		html {
+			font-size: 125%;
+			font-family: sans-serif;
+		}
+
+		body {
+			line-height: 1.25;
+		}
+
+		h1 {
+			font-size: 1.6rem;
+			margin-bottom: 0;
+		}
+
+		a {
+			position: relative;
+			color: darkolivegreen;
+			text-decoration: none;
+		}
+
+		a::after {
+			content: '';
+			position: absolute;
+			height: .6rem;
+			width: 90%;
+			bottom: 0rem;
+			left: 5%;
+			background: rgb(214, 208, 236);
+			z-index: -1;
+
+		}
+
+		a:hover::after {
+			background: rgba(214, 208, 236, 0.205);
+		}
+
+		.wrapper {
+			width: 100%;
+			max-width: 660px;
+			margin: 0 auto;
+		}
+
+		blockquote {
+			background: aliceblue;
+			margin: 1.5rem auto;
+			padding: 30px 50px;
+			width: 90%;
+			font-family: serif;
+			position: relative;
+		}
+
+		blockquote p {
+			margin: 0;
+			color: navy;
+			font-size: 1.2rem;
+			font-style: italic;
+		}
+
+		blockquote::before,
+		blockquote::after {
+			position: absolute;
+			font-size: 4rem;
+		}
+
+		blockquote::before {
+			content: "“";
+			top: -0.3rem;
+			left: 0;
+
+		}
+
+		blockquote::after {
+			content: '”';
+			bottom: -1rem;
+			right: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<section>
+			<div class="wrapper">
+				<h1>Save the clock tower</h1>
+
+				<p>Good evening, I'm <a href="https://media.giphy.com/media/13WVgB4UR7hK/giphy.gif" target="_blank">Doctor Emmet
+						Brown</a>, I'm standing here on the parking lot of- I can't believe you loaned me a car, without telling me
+					it had a blindspot. I could've been killed. Cause, George, she wants to go to the dance with you, she just
+					doesn't know it yet. That's why we got to show her that <a
+						href="https://media.giphy.com/media/mvH93rThQkSe4/giphy.gif" target="_blank">you, George McFly, are a
+						fighter</a>. You're somebody who's gonna stand up for yourself, someone who's gonna protect her. Lynda,
+					first of all, I'm not your answering service. Second of all, somebody named Greg or Craig called you just a
+					little while ago. <a href="https://media.giphy.com/media/13WVgB4UR7hK/giphy.gif" target="_blank">Hello</a>.
+				</p>
+				<p>You got a real attitude problem, McFly. <a href="https://media.giphy.com/media/mvH93rThQkSe4/giphy.gif"
+						target="_blank">You're a slacker</a>. You remind me of you father when he went her, he was a slacker too.
+					I'm telling the truth, Doc, you gotta believe me. Hey Marty, I'm not your answering service, but you're
+					outside pouting about the car, Jennifer Parker called you twice. Don't say a word.</p>
+
+				<blockquote>
+					<p>Wait a minute. Wait a minute, Doc. Are you telling me that it's 8:25? Oh honey, he's teasing you, nobody
+						has two television sets.</p>
+				</blockquote>
+
+				<p>If you believe in progress, re-elect Mayor Red Thomas, progress is his middle name. Mayor Red Thomas's
+					progress platform means more jobs, better education, bigger civic improvements, and lower taxes. On election
+					day, cast your vote for <a href="https://media.giphy.com/media/mvH93rThQkSe4/giphy.gif" target="_blank">a
+						proven leader</a>, re-elect Mayor Red Thomas... You do? Whoa, whoa, kid, kid, stop, stop, stop, stop. Just
+					finishing up the second coat now. I still don't understand, how am I supposed to go to the dance with her, if
+					she's already going to the dance with you.</p>
+				<p>My oh my <a href="https://media.giphy.com/media/13WVgB4UR7hK/giphy.gif" target="_blank">Doc, you
+						disintegrated Einstein</a>. That Biff, what a character. Always trying to get away with something. Been on
+					top of Biff ever since high school. Although, if it wasn't for him-. Jennifer, oh are you a sight for sore
+					eyes. <a href="https://media.giphy.com/media/mvH93rThQkSe4/giphy.gif" target="_blank">Listen, Doc. Let's
+						go.</a> Let me look at you. Radiation suit, of course, cause all of the fall out from the atomic wars. This
+					is truly amazing, a portable television studio.</p>
+			</div>
+		</section>
+	</main>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo Classes</title>
+  <style>
+    a {
+      font-size: 4rem;
+      text-transform: uppercase;
+      color: red;
+    }
+
+    a:hover {
+      font-size: 6rem;
+      text-transform: lowercase;
+      color: blue;
+    }
+
+    a:visited {
+      font-size: 27px;
+      background-color: hotpink;
+      color: rebeccapurple;
+    }
+
+    a:active {
+      font-size: 27px;
+      background-color: hotpink;
+      color: green;
+    }
+
+    a:focus {
+      font-size: 27px;
+      background-color: hotpink;
+      color: rebeccapurple;
+      border: 3px solid;
+    }
+
+    input {
+      padding: 1em;
+      border: 4px solid black;
+    }
+
+    input:active {
+      background: red;
+    }
+
+    input:focus {
+      border: 4px solid blue;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <main>
+    <a href="" class="anchor">Today's content!</a>
+  </main>
+
+  <form action="">
+    <input class="username" type="text" placeholder="username">
+    <input class="password" type="text" placeholder="password">
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo Elements</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .name {
+      position: relative;
+      width: 10rem;
+      height: 10rem;
+      display: block;
+      background-color: tomato;
+      transform: rotate(-45deg);
+    }
+
+    .name::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 10rem;
+      height: 10rem;
+      bottom: 50%;
+      left: 0;
+      background-color: tomato;
+      border-radius: 50% 50% 0 0;
+    }
+
+    .name::after {
+      content: '';
+      position: absolute;
+      left: 5rem;
+      display: block;
+      width: 10rem;
+      height: 10rem;
+      background-color: tomato;
+      border-radius: 50% 50% 0 0;
+      transform: rotate(90deg);
+    }
+  </style>
+</head>
+
+<body>
+  <span class="name"></span>
+</body>
+
+</html>
