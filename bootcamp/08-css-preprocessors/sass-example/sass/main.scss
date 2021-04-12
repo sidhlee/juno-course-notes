@@ -1,0 +1,28 @@
+@import './setup'; // only Dart Sass currently support @use
+@import './mixins';
+
+$primary: rgb(12, 12, 43);
+$secondaryColor: #eee;
+
+body {
+  margin: 0;
+  background-color: rgb(12, 12, 43);
+  color: $secondaryColor;
+}
+
+a {
+  color: $secondaryColor;
+  &:hover {
+    color: darken($secondaryColor, 15%);
+  }
+}
+
+h1 {
+  @include heading($fz: 5rem);
+}
+
+ul {
+  li {
+    @include heading;
+  }
+}

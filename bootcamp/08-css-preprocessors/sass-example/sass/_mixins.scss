@@ -1,0 +1,7 @@
+@mixin heading($fz, $lh: 1.6, $ff: 'MontSerrat', $color: 'white') {
+  font-family: $ff;
+  font-size: $fz;
+  line-height: $lh;
+  color: $color;
+  margin-top: 1em;
+}
