@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spotify Sign-up Form</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>Sign up with your email address</h1>
+    <form action="">
+      <fieldset>
+        <label class="sr-only" for="email">Email</label>
+        <input id="email" type="email" placeholder="Email" required />
+        <label class="sr-only" for="confirmEmail">Confirm Email</label>
+        <input id="confirmEmail" type="email" placeholder="Confirm email" required />
+        <label class="sr-only" for="email">Password</label>
+        <input id="password" type="password" placeholder="Password" required minlength="6" />
+        <label class="sr-only" for="username">What should we call you?</label>
+        <input id="email" type="email" placeholder="What should we call you?" required />
+      </fieldset>
+
+      <fieldset class="dob">
+        <legend>Date of birth</legend>
+        <label class="sr-only" for="day">Day</label>
+        <input id="day" type="number" min="1" max="31" placeholder="Day" required>
+        <label class="sr-only" for="month"></label>
+        <select class="month" name="month" id="month">
+          <option value="00" disabled selected>Month</option>
+          <option value="01">January</option>
+          <option value="02">February</option>
+          <option value="03">March</option>
+          <option value="04">April</option>
+          <option value="05">May</option>
+          <option value="06">June</option>
+          <option value="07">July</option>
+          <option value="08">August</option>
+          <option value="09">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+
+        <label class="sr-only" for="day">year</label>
+        <input id="day" type="number" min="1900" max="2010" placeholder="Year" required>
+      </fieldset>
+
+      <fieldset class="gender">
+        <div class="gender-item">
+          <input type="radio" name="gender" id="male" value="male"><label for="male">Male</label>
+        </div>
+        <div class="gender-item">
+          <input type="radio" name="gender" id="female" value="female"><label for="female">Female</label>
+        </div>
+        <div class="gender-item">
+          <input type="radio" name="gender" id="nonBinary" value="nonBinary"><label for="nonBinary">Non-binary</label>
+        </div>
+      </fieldset>
+
+      <!-- tos: terms of service -->
+      <fieldset class="tos">
+        <legend>We may send you emails with news or promotions occasionally. Go to your Email notifications page to
+          control the messages we send.</legend>
+        <div class="tos-item">
+          <input type="checkbox" name="shareMarketingData" id="shareMarketingData">
+          <label for="shareMarketingData">Share my registration data with Spotify's content providers for marketing
+            purposes.</label>
+        </div>
+        <div class="tos-item">
+          <input type="checkbox" name="agreeToTerms" id="agreeToTerms">
+          <label for="agreeToTerms">I agree to the <a href="">Spotify terms & conditions</a> and <a href="">Private
+              Policy</a>.</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="capcha">
+        <div class="capcha-checkbox">
+          <input id="capcha" type="checkbox" name="capcha" id="">
+          <label for="capcha">I'm not a robot</label>
+        </div>
+        <figure>
+          <img src="./assets/recaptcha-logo.png" alt="">
+          <figcaption>re <span>captcha</span></figcaption>
+          <figcaption><a href="">Privacy</a> - <a href="">Terms</a></figcaption>
+        </figure>
+      </fieldset>
+
+      <button type="submit">Sign up</button>
+    </form>
+    <p class="login">Already have an account? <a href="">Log in</a></p>
+  </div>
+</body>
+
+</html>

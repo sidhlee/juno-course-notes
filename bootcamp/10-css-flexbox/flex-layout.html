@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex Layout</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    header,
+    article,
+    aside,
+    footer {
+      padding: 20px;
+      border-radius: 3px;
+      margin: 1px 0;
+    }
+
+    header {
+      background: lightblue;
+    }
+
+    article {
+      background: papayawhip;
+      width: 80%;
+    }
+
+    aside {
+      background: lightseagreen;
+      width: 20%;
+    }
+
+    footer {
+      background: goldenrod;
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    main {
+      height: 80vh;
+      background: black;
+      display: flex;
+      align-items: stretch;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Header</h1>
+    </header>
+    <main>
+      <article>
+        <h2>Article</h2>
+      </article>
+      <aside>
+        <h2>Aside</h2>
+      </aside>
+    </main>
+    <footer>
+      <h2>Footer</h2>
+    </footer>
+  </div>
+</body>
+
+</html>
