@@ -47,9 +47,7 @@ Specify the size of any auto-generated(implicit) grid tracks
 
 ## Repeat function
 
-`
-
-`
+Repeat!
 
 ## Gotchas
 
