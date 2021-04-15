@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transition</title>
+  <style>
+    button {
+      padding: .5em 1.5em;
+      font-size: 1.5rem;
+      background-color: dodgerblue;
+      color: white;
+      border: solid dodgerblue;
+
+    }
+
+    .btn2 {
+      transition: color 250ms, background-color 250ms;
+    }
+
+    button:hover,
+    button:focus {
+      color: dodgerblue;
+      background-color: white;
+    }
+
+    .container {
+      width: 80px;
+      height: 80px;
+      border: 3px solid darkorchid;
+      position: relative;
+    }
+
+    .inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: teal;
+      width: 50px;
+      height: 50px;
+    }
+
+    .inner::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      background: pink;
+      transition: all 500ms ease;
+    }
+
+    .container:hover .inner::after {
+      transform: translate3d(100%, 100%, 0);
+    }
+  </style>
+</head>
+
+
+<body>
+  <div>
+    <button class="btn1">click me!</button>
+    <button class="btn2">click me!</button>
+  </div>
+
+  <div class="container">
+    <div class="inner"></div>
+  </div>
+</body>
+
+</html>
