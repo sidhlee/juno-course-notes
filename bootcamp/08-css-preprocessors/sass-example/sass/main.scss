@@ -20,9 +20,3 @@ a {
 h1 {
   @include heading($fz: 5rem);
 }
-
-ul {
-  li {
-    @include heading;
-  }
-}
