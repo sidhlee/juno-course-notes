@@ -27,8 +27,17 @@ Provide a skip link to the main content so that SR users don't have to skip over
 </nav>
 ```
 
-`bom.com`
-```html
-<a class="show-on-focus skip-nav" target="_self" href="#skip-nav" data-ana-apply-intent="false" data-meta="primary-skip-nav--link" data-ana="skip navigation" data-di-id="di-id-d0bde646-716c7ad6">Skip navigation</a>
-```
+`bmo.com`
 
+```html
+<a
+  class="show-on-focus skip-nav"
+  target="_self"
+  href="#skip-nav"
+  data-ana-apply-intent="false"
+  data-meta="primary-skip-nav--link"
+  data-ana="skip navigation"
+  data-di-id="di-id-d0bde646-716c7ad6"
+  >Skip navigation</a
+>
+```

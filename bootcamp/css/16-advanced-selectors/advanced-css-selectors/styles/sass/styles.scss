@@ -74,6 +74,7 @@ input[type='checkbox'] {
   padding-right: 6rem;
   margin: 1em 0;
 
+  //
   --h: 1.5rem;
   --w: 4rem;
   &::before {
@@ -83,8 +84,10 @@ input[type='checkbox'] {
     right: 0;
     width: var(--w);
     height: var(--h);
+    // make the pill-shaped box
     border-radius: 99999px;
     background-color: $clr-primary;
+
     --p: calc(var(--h) * 0.14);
     padding: var(--p);
     transform: translate(var(--p), calc(-1 * var(--p)));
@@ -137,7 +140,7 @@ input[type='checkbox']:focus + .toggleLabel {
     }
 
     position: relative;
-    // select descriptive class
+    // down arrow coming down from tab menu -> selecting descriptive class
     .fa-angle-double-down {
       position: absolute;
       color: $clr-accent;
@@ -196,6 +199,13 @@ img {
   margin: 0 2rem;
 }
 
-.collapsed {
+// Hide all contents by default
+.content > div {
   display: none;
+}
+// show only the content where corresponding radio button is checked
+#tab1:checked ~ .content #content1,
+#tab2:checked ~ .content #content2,
+#tab3:checked ~ .content #content3 {
+  display: flex;
 }
