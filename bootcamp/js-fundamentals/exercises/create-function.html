@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    function takeBreak() {
+      const minute = prompt('How long is the break in minutes?');
+      if (typeof +minute !== 'number') {
+        alert('invalid input type: please input number');
+        return
+      }
+      const now = new Date();
+      const end = new Date(now.getTime() + minute * 60000)
+
+      const nowString = now.toLocaleTimeString()
+      const endString = end.toLocaleTimeString();
+
+      const message = `It's ${nowString}. Please return by ${endString}`;
+      console.log(message)
+      alert(message);
+      return end
+    }
+
+
+
+    takeBreak();
+
+  </script>
+</body>
+
+</html>
