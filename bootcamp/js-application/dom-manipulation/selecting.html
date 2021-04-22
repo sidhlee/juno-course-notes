@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1 id="title">Selecting Elements with Javascript</h1>
+  <main>
+    <section class="intro">
+      <h2>Intro</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, consequatur. Est dicta praesentium aliquam
+        tempora culpa voluptatem voluptate, dignissimos odio vel officia, fugiat veritatis id laudantium sequi
+        consequuntur ut quas.</p>
+    </section>
+    <section class="about">
+      <h2>About</h2>
+      <p class="rambling">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde fugiat nostrum, quo fuga at
+        ipsum illo molestiae maiores quidem obcaecati.</p>
+      <p class="rambling">Sint repellat sit dolorum laboriosam quia nesciunt nemo ipsam eos quas similique
+        exercitationem cum suscipit incidunt temporibus, neque maiores veniam?</p>
+    </section>
+  </main>
+  <script>
+
+    const introHeading = document.querySelector('h2');
+    console.log({ introHeading });
+
+    const paragraphs = document.querySelectorAll('p');
+    console.log({ paragraphs });
+    console.log([...paragraphs.entries()])
+  </script>
+</body>
+
+</html>
