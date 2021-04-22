@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Student!</title>
+</head>
+
+<body>
+	<script>
+
+		// Create an object called student.
+		const student = {
+			equipment: [],
+			energy: 100,
+			grades: 5,
+			uniform: {},
+			eat(calories) {
+				student.energy = student.energy + calories
+			},
+			addEquip(equip) {
+				student.equipment.push(equip)
+			},
+			changeUniform(uniform) {
+				student.uniform = uniform
+			},
+			study(minutes) {
+				student.grades = student.grades * (1.05 ** (minutes / 60));
+				student.energy = student.energy - 2 * (minutes / 60);
+			},
+		}
+
+	// Give that object equipment (array), energy (number), grades (number), and a uniform (object).
+
+
+
+	// Create a method that takes in food (number of calories) and then updates energy.
+
+	// Create a method that takes in new equipment that will update our equipment array.
+
+
+	// Create a method that will change the uniform (since everyday you wear something different)
+
+	// Create a method study time that takes time studied (minutes) that will update our grades and deplete our energy. For every hour that you study, your grades go up by 5% (example: if your grade is 60, and you study an hour, your grade will be 65). For every hour you study, your energy goes down by 2.
+
+	// *Bonus* if your energy goes below 0, your grades go down (10%)
+
+	</script>
+</body>
+
+</html>

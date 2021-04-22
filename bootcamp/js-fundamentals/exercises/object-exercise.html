@@ -43,13 +43,17 @@
 			return ({
 				name,
 				alertName() {
-					alert(name)
+					alert(name) // closure
+					console.log(this.name) // this
 				}
 			})
 		}
 
-		const person = createPerson('John')
-		console.log(person)
+		const john = createPerson('John')
+		john.alertName();
+		const joe = createPerson('joe')
+		joe.alertName();
+
 
 
 	</script>
