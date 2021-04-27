@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Array Methods</title>
+</head>
+
+<body>
+  <h1>Array Methods</h1>
+  <ul class="movie-genres"></ul>
+
+
+  <script>
+    const genres = ["horror", "rom-com", "comedy", "musical", "sci-fi", "samurai"];
+    const movieList = document.querySelector('ul.movie-genres');
+    genres.forEach((genre, i) => {
+      const newListItem = document.createElement('li');
+      newListItem.textContent = genre;
+      movieList.append(newListItem);
+    })
+
+
+    const songs = ["up jumped the spring", "summertime", "autumn leaves", "winter wonderland", "time after time", "all the things you are"]
+    const filteredSongs = songs.filter(song => song.length < 5);
+
+  </script>
+</body>
+
+</html>
