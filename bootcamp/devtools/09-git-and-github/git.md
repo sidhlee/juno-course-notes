@@ -49,3 +49,5 @@ Because `git add .` DOES NOT update the deleted files and folders.
 ## GitHup Pages
 
 - [Course Note](https://github.com/HackerYou/bootcamp-notes/blob/master/git-and-command-line/github-pages.md)
+
+## Collaboration

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My first AJAX request</title>
+</head>
+
+<body>
+
+  <h1>Open up your console to see how the request went. 👀</h1>
+
+  <p class="nextDeparture">Data will go here!</p>
+
+  <script>
+
+    // https://www.septastats.com/api/current/system/latest
+
+    fetch('https://www.septastats.com/api/current/system/latest')
+      .then((response) => {
+        console.log('It worked!');
+        console.log(response)
+        return response.json()
+      }).then(data => {
+        console.log(data)
+      })
+
+  </script>
+</body>
+
+</html>
