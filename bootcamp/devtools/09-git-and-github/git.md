@@ -51,3 +51,16 @@ Because `git add .` DOES NOT update the deleted files and folders.
 - [Course Note](https://github.com/HackerYou/bootcamp-notes/blob/master/git-and-command-line/github-pages.md)
 
 ## Collaboration
+
+### Pair Program GitHub Workflow
+
+(student 1 = s1, student 2 = s2)
+
+1. s1 pulls from main
+2. s1 creates a branch
+3. s1 and s2 work on it for 25 min, with s1 as the driver
+4. s1 adds, commits, pushes and creates a PR
+   s2 approves it
+   s1 merges it
+   s2 pulls from main
+   repeat with roles reversed
