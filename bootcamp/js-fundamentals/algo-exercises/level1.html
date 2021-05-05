@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Lv1</title>
+</head>
+
+<body>
+  <script>
+    /* Factorial
+      Write a function that takes in a number(n) parameter, and returns or logs the factorial of that number — or in other words, the product of all numbers from 1 to the number.
+      For instance, if the user inputs the number five, the output would be the result of performing the operation 5 x 4 x 3 x 2 x 1, which is 120.
+      Example(s):
+      factorial(6)
+        >> 720 */
+
+    function factorial(n) {
+      return [...Array(n)].map((_, i) => i + 1).reduce((fact, n) => fact * n, 1)
+    }
+    console.assert(factorial(6) === 720, { message: "factorial should work" });
+
+    /*
+    Rock, paper, scissors
+    Write a function that plays rock, paper, scissors! It should take a user input of 'rock', 'paper', or 'scissors' as a parameter, randomly choose one of the three for itself, and then log or return the result of the match-up in a readable, friendly manner.
+
+    Example(s):
+
+    rps('rock');
+    >> "You chose rock. I chose scissors. You win!"
+    rps('rock');
+    >> "You chose rock. I chose rock. It's a tie!"
+    rps('rock');
+    >> "You chose rock. I chose paper. I win!"
+    */
+
+    function rps(hand) {
+      const rock = "rock";
+      const paper = "paper";
+      const scissors = "scissors";
+      const validHands = [rock, paper, scissors];
+      if (!validHands.includes(hand)) return "invalid hand"
+
+      const randomIndex = Math.floor(Math.random() * 3);
+      const randomHand = validHands[randomIndex];
+
+      if (hand === randomHand) {
+        return `You chose ${hand}. I chose ${randomHand}. It's a tie!`
+      }
+
+      const rockPaper = hand === rock && randomHand === paper;
+      const rockScissors = hand === rock && randomHand === scissors;
+      const paperRock = hand === paper && randomHand === rock;
+      const paperScissors = hand === paper && randomHand === scissors;
+      const scissorsRock = hand === scissors && randomHand === rock;
+      const scissorsPaper = hand === scissors && randomHand === paper;
+
+      const createWinMessage = () => `You chose ${hand}. I chose ${randomHand}. You win!`
+      const createLoseMessage = () => `You chose ${hand}. I chose ${randomHand}. I win!`
+
+      if (rockPaper) return createLoseMessage();
+      if (rockScissors) return createWinMessage();
+      if (paperRock) return createWinMessage();
+      if (rockScissors) return createLoseMessage();
+      if (scissorsRock) return createLoseMessage();
+      if (scissorsPaper) return createWinMessage();
+
+      return "What just happened?"
+    }
+
+    console.log(rps('rock'));
+    console.log(rps('paper'));
+    console.log(rps('scissors'));
+    console.log(rps('scissor'));
+
+    /*
+    Space letters
+    Create a function that takes in a string parameter representing some words or a sentence, and returns or logs that string with spaces in between all the characters.
+    
+    Example(s):
+    
+    spaceLetters("Hello world!");
+    >> "H e l l o   w o r l d !"    
+    */
+
+    function spaceLetters(str) {
+      return str.split("").join(" ");
+    }
+
+    console.assert(spaceLetters("Hello world!") === "H e l l o   w o r l d !", { message: "spaceLetters should work" })
+
+    /*
+    Which is bigger?
+    Write a function that takes in two numbers as parameters, and then returns or logs the larger number.
+
+    Example(s):
+
+    biggerNumber(8,5);
+    >> 8
+    biggerNumber(-5,10)
+    >> 10
+    */
+    function biggerNumber(n, m) {
+      return n > m ? n : m;
+    }
+
+    console.assert(biggerNumber(8, 5) === 8);
+    console.assert(biggerNumber(-5, 10) === 10);
+
+    /* 
+    Find string in array
+    Create a function that takes in two parameters: a string and an array of strings. It should attempt to find the string inside of the array, and return whether the search was successful or not.
+
+    Example(s):
+
+    containsString('turtle',['hammer','dog','bismuth']);
+    >> false
+    containsString('bagel',['brioche','bagel','baguette']);
+    >> true
+    */
+    function containsString(str, strArray) {
+      return strArray.includes(str);
+    }
+
+    console.
+
+
+
+  </script>
+</body>
+
+</html>

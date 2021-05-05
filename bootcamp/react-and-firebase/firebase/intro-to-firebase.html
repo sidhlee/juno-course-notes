@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firebase</title>
+</head>
+
+<body>
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+  <!-- Had to add this to make firebase.database available -->
+  <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "my-firebase-api-key",
+      authDomain: "bootcamp-first-firebase-f6e28.firebaseapp.com",
+      projectId: "bootcamp-first-firebase-f6e28",
+      storageBucket: "bootcamp-first-firebase-f6e28.appspot.com",
+      messagingSenderId: "693864244186",
+      appId: "1:693864244186:web:d7a1cb5da818dc9e3a56e3"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // GET DATA FROM FIREBASE
+    const db = firebase.database().ref();
+    db.set(null);
+
+    // Get a reference to the "messages" part of our database
+    // we can also reference a collection that hasn't been initialized.
+    const messagesCollection = firebase.database().ref('messages');
+
+    // Add a new message;
+
+    // this will insert a new message for every reload
+    // console.log(messagesCollection.push('Hello firebase!'))
+
+    // set is a firebase way of "upsert" a doc.
+    // console.log(messagesCollection.set('Hello firebase!'))
+
+    // Assume we have a userID from _SOMEWHERE_ (like an authentication process)
+    const userId = '123';
+    const profile = {
+      colorSchemePreference: 'dark',
+      location: 'The real world',
+      bio: 'Something really depp and thoughtful'
+    }
+
+    // Getting the reference to 1 particular user entry AT the userId location
+    const userDoc = firebase.database().ref(`users/${userId}`)
+
+    // "Upsert" user profile at bootcamp-first-firebase-iciu82q733d/users/123
+    userDoc.set(profile);
+
+    const additionalProfileFields = {
+      avatar: 'https://placekitten.com/200/200',
+    }
+
+    // "update" will "set" the fields inside passed object
+    userDoc.update(additionalProfileFields);
+
+    // You can also reference a specific field
+    const bioField = firebase.database().ref(`users/${userId}/bio`);
+    bioField.set('Actually the worst')
+
+    // CHANGES THE ENTIRES STORED DATA ON DB 
+    // const db = firebase.database().ref();
+    // db.set({
+    //   highscore: 12,
+    //   lastPlayed: 'yesterday',
+    // });
+
+    // GET DATA FROM FIREBASE
+
+    // Whenever ANY ENTRY is changed AND when first registered
+    // (AT THE REFERENCED PATH)
+    db.on('value', (snapshot) => {
+      console.log('We got value!');
+      console.log(snapshot.val());
+    })
+
+  </script>
+
+</body>
+
+</html>

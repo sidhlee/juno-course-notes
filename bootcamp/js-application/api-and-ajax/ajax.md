@@ -7,7 +7,8 @@
 ## Why prefer appending elements vs assigning string to innerHTML
 
 - `append`ing element is much faster than `innerHTML`
-- All event listeners attached to children get wiped out.
+- All event listeners attached to children don't get cleared. This causes memory leak!!!
+- Use `Element.replaceChildren()` to clear children
 
 ## Promise.all
 
