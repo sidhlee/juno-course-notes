@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Warrior</title>
+  <style>
+    .warrior,
+    .dragon {
+      height: 50px;
+      width: 50px;
+      position: absolute;
+    }
+
+    .warrior {
+      background: blue;
+    }
+
+    .dragon {
+      background: red;
+      right: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>The Warrior</h1>
+  <div id="warrior" class="warrior"></div>
+  <div id="dragon" class="dragon"></div>
+
+  <script>
+    class Character {
+      constructor(name) {
+        this.location = {
+          x: 0,
+          y: 0,
+        }
+        this.name = name;
+      }
+      walk(steps) {
+        this.location.x += steps;
+        document.getElementById('warrior').style.left = this.location.x;
+      }
+      talk() {
+        console.log('Hi!')
+      }
+    }
+
+    class Warrior extends Character {
+      constructor(name) {
+        super(name);
+      }
+    }
+
+    const wonderWoman = new Warrior('Wonder Woman');
+    wonderWoman.walk(30);
+    console.log(wonderWoman)
+
+    let userInput = prompt('What do you want to do? (1) Walk, (2) Talk');
+    while (userInput != "0") {
+      switch (userInput) {
+        case "1":
+          wonderWoman.walk(20);
+          console.log(wonderWoman.location.x);
+          break;
+        case "2":
+          wonderWoman.talk();
+          break;
+        case "0":
+          break;
+        default:
+          alert('1 or 2!!!');
+      }
+
+      userInput = prompt('What do you want to do? (1) Walk, (2) Talk');
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>

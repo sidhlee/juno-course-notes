@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scope and Execution Context</title>
+</head>
+
+<body>
+
+
+  <script>
+
+    const logThisWithArrow = () => {
+      console.log(this);
+    }
+
+    const app = {
+      name: 'app',
+      get this() {
+        return this
+      },
+      doSomething: function () {
+        console.log(this);
+      },
+      doSomethingWithArrow: () => {
+        console.log(this);
+      }
+    }
+
+    const appTwo = {
+      name: 'app2',
+      doSomething: app.doSomething,
+      logThis: logThis,
+      logThisInsideFn: function () {
+        logThis();
+      },
+      logThisInsideArrowFn: () => {
+        logThis();
+      }
+    }
+
+
+
+    function logThis() {
+      console.log(this);
+    }
+
+
+
+
+  </script>
+
+</body>
+
+</html>

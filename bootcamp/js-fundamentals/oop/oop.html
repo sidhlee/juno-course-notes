@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+
+    class GalleryItem {
+      constructor(src, alt, containerElement) {
+        this.src = src;
+        this.alt = alt;
+        this.containerElement = containerElement;
+        this.create();
+      }
+      create() {
+        const li = document.createElement('li');
+        const img = document.createElement('img');
+        img.src = this.src;
+        img.alt = this.alt;
+        li.append(img);
+        this.item = li;
+      }
+      display() {
+        this.containerElement.append(this.item);
+      }
+    }
+
+    const ul = document.createElement('ul');
+    document.body.append(ul);
+
+    [...Array(10)].forEach((_, i) => {
+      const item = new GalleryItem(`https://picsum.photos/id/${i + 10}/400/400`, 'random image', ul);
+      item.display();
+    })
+
+
+
+  </script>
+
+</body>
+
+</html>
