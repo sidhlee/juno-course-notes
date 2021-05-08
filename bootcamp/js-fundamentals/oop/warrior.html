@@ -32,16 +32,18 @@
 
   <script>
     class Character {
-      constructor(name) {
+      constructor(name, id) {
         this.location = {
           x: 0,
           y: 0,
         }
         this.name = name;
+        this.characterElem = document.getElementById('warrior')
       }
       walk(steps) {
         this.location.x += steps;
-        document.getElementById('warrior').style.left = this.location.x;
+        this.characterElem.style.left = this.location.x + 'px';
+        console.log(this.characterElem.style.left)
       }
       talk() {
         console.log('Hi!')
@@ -49,17 +51,20 @@
     }
 
     class Warrior extends Character {
-      constructor(name) {
-        super(name);
+      constructor(name, id) {
+        super(name, id);
+        this.weapons = ['whip', 'charm']
       }
+
     }
 
-    const wonderWoman = new Warrior('Wonder Woman');
+    const wonderWoman = new Warrior('Wonder Woman', 'warrior');
     wonderWoman.walk(30);
-    console.log(wonderWoman)
 
     let userInput = prompt('What do you want to do? (1) Walk, (2) Talk');
+
     while (userInput != "0") {
+      console.log({ userInput })
       switch (userInput) {
         case "1":
           wonderWoman.walk(20);
@@ -74,7 +79,9 @@
           alert('1 or 2!!!');
       }
 
+
       userInput = prompt('What do you want to do? (1) Walk, (2) Talk');
+
     }
 
 
