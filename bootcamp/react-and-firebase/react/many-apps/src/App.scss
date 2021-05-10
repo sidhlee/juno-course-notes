@@ -1,0 +1,102 @@
+:root {
+  --cl-off-white: #f8f8ff;
+  --cl-off-black: #010b13;
+  --text-muted: #bbb;
+  --text-inverted: white;
+  --text-main: black;
+}
+
+html {
+  font-size: 125%;
+}
+body {
+  margin: 0;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+.App {
+  text-align: center;
+}
+
+.navbar {
+  background: var(--cl-off-black);
+  display: flex;
+  padding: 0.5rem 2rem;
+  color: white;
+}
+
+.nav-item a {
+  color: var(--text-muted);
+  &.active {
+    color: var(--text-inverted);
+  }
+}
+
+.logo {
+  margin-right: 1rem;
+
+  span {
+    font-weight: bold;
+    a {
+      color: var(--text-inverted);
+    }
+  }
+}
+
+.card {
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  margin: 1rem;
+  min-width: 300px;
+
+  img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.btn {
+  font: inherit;
+  background: dodgerblue;
+  color: white;
+  padding: 0.5em 1.25em;
+  border: 0;
+  border-radius: 4px;
+  transition: background 200ms ease;
+  &:hover,
+  &:focus {
+    background: royalblue;
+  }
+}
+
+footer {
+  background: var(--cl-off-black);
+  padding: 2rem;
+  p {
+    color: var(--text-inverted);
+    margin: 0;
+  }
+}

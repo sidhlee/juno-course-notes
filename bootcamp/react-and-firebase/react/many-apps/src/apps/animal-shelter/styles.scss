@@ -1,0 +1,30 @@
+main {
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+header {
+}
+
+.animals {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.animal-card {
+  background: white;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px;
+  li {
+    width: 150px;
+    height: 150px;
+    img {
+      width: 100%;
+    }
+  }
+}

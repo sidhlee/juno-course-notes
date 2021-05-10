@@ -10,7 +10,7 @@ In the past, path was only way to access specific resource, but
 
 ### Typo in url
 
-Typo in API url results in hitting different domain all together. If that domain has no API then it would not have proper CORS header which leads to CORS Error in the network tab.
+Typo in API route params results in hitting different endpoint of the same domain. If that "non-existing" endpoint is not handled properly with 404 response and returns response without `Access-Control-Allow-Origin` header, the browser will throw CORS error.
 
 ## Why we have to call `response.json()` on fetch return?
 
