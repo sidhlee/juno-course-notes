@@ -1,4 +1,5 @@
 import React from 'react';
+import './animal-shelter-styles.scss';
 import animals from './animals.js';
 import Animal from './Animal';
 import Header from './Header';

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    class ButtonOne {
+      constructor() {
+        this.state = { count: 0 }
+      }
+      handleClick() {
+        console.log("[ButtonOne] handleClick");
+        // value of this is not determined until runtime
+        if (this.state) {
+          console.log("state available!: ", this.state, "because this === ", this)
+        } else {
+          console.log("state not available because this ===", this)
+        }
+      }
+
+
+      render() {
+        console.log("[ButtonOne.render()] this === ", this); // this === ButtonOne
+
+        return ({
+          type: 'button',
+          props: {
+            children: 'Click Me',
+            onClick: this.handleClick
+          }
+        })
+      }
+    }
+
+    const buttonOne = new ButtonOne();
+    const buttonOneReactElement = buttonOne.render() // this == MyComponent
+
+    buttonOneReactElement.props.onClick() // this == props (cannot access state from this)
+
+    // somewhere inside react
+    const reactApp = {
+      init() {
+        console.log("======================")
+        console.log("somewhere inside react")
+        onClickHandler = buttonOneReactElement.props.onClick
+        window.onClickHandler(); // this === window
+        console.log("======================")
+      }
+    }
+
+    reactApp.init();
+
+    class ButtonTwo {
+      constructor() {
+        this.state = { count: 0 }
+      }
+      handleClick = () => {
+        console.log("[ButtonTwo] handleClick"); // this === MyComponent
+        if (this.state) {
+
+          console.log("state available!: ", this.state, "because this === ", this)
+        } else {
+          console.log("state not available because this ===", this)
+        }
+      }
+
+
+      render() {
+        console.log("[ButtonOne.render()] this === ", this); // this === ButtonTwo
+
+        return ({
+          type: 'button',
+          props: {
+            children: 'Click Me',
+            onClick: this.handleClick
+          }
+        })
+      }
+    }
+
+    const buttonTwo = new ButtonTwo();
+    const buttonTwoReactElement = buttonTwo.render() // this == MyComponent
+
+    buttonTwoReactElement.props.onClick() // this == props (cannot access state from this)
+
+
+
+
+  </script>
+</body>
+
+</html>

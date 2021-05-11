@@ -1,6 +1,7 @@
 :root {
   --cl-off-white: #f8f8ff;
   --cl-off-black: #010b13;
+  --cl-accent: paleVioletRed;
   --text-muted: #bbb;
   --text-inverted: white;
   --text-main: black;
@@ -37,17 +38,21 @@ a {
   text-align: center;
 }
 
-.navbar {
+header {
   background: var(--cl-off-black);
   display: flex;
   padding: 0.5rem 2rem;
   color: white;
 }
 
-.nav-item a {
-  color: var(--text-muted);
-  &.active {
-    color: var(--text-inverted);
+.nav-item {
+  margin: 0.5rem;
+  a {
+    color: var(--text-muted);
+    &:hover,
+    &.active {
+      color: var(--cl-accent);
+    }
   }
 }
 
@@ -90,6 +95,11 @@ a {
   &:focus {
     background: royalblue;
   }
+}
+
+main {
+  padding: 2rem;
+  min-height: 100vh;
 }
 
 footer {

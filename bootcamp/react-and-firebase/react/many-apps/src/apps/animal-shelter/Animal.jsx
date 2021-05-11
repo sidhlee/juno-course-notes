@@ -1,5 +1,3 @@
-import './styles.scss';
-
 const Animal = ({ animal }) => {
   const { name, age, species, gender, picture } = animal;
   return (
