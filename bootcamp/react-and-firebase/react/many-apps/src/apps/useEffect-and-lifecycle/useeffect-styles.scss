@@ -1,0 +1,20 @@
+.imgContainer {
+  width: 90%;
+  margin: 2rem auto;
+  max-width: 500px;
+}
+
+.mouseTracker {
+  margin: 1rem;
+}
+
+.cursor {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}

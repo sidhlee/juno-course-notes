@@ -27,6 +27,10 @@ const Book = ({
         </div>
         <p className="description">{description}</p>
       </div>
+      {[0].map((_) => {
+        console.log('book');
+        return undefined;
+      })}
     </li>
   );
 };

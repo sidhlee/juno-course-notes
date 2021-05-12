@@ -13,10 +13,10 @@ const BookShelf = () => {
 
   useEffect(() => {
     fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_TIMES_API}
-`)
+    `)
       .then((response) => response.json())
       .then((responseJSON) => {
-        console.log(responseJSON);
+        console.log('Data fetched');
         const {
           results: { bestsellers_date, books, display_name },
         } = responseJSON;
@@ -72,6 +72,10 @@ const BookShelf = () => {
           }
         )}
       </ul>
+      {[0].map((_) => {
+        console.log('bookshelf');
+        return undefined;
+      })}
     </div>
   );
 };

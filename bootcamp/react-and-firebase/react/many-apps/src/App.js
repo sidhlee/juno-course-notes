@@ -5,12 +5,16 @@ import BookShelf from './apps/bookshelf/BookShelf';
 
 const AnimalShelter = lazy(() => import('./apps/animal-shelter/AnimalShelter'));
 const MadProps = lazy(() => import('./apps/mad-props/MadProps'));
+const UseEffect = lazy(() =>
+  import('./apps/useEffect-and-lifecycle/UseEffect')
+);
+const ArtGallery = lazy(() => import('./apps/art-gallery/ArtGallery'));
 
 const Home = () => {
   return (
     <Switch>
       {/* Wait for components to load before rendering. Currently this is the only use case for Suspense */}
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div>Loading App...</div>}>
         <Route path="/" exact>
           <section>
             <h1>React Apps</h1>
@@ -24,7 +28,13 @@ const Home = () => {
                   <NavLink to="/mad-props">MadProps</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/bookshelf">BookShelf feat. Firebase</NavLink>
+                  <NavLink to="/bookshelf">BookShelf</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink to="/useeffect-and-lifecycle">useEffect</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink to="/art-gallery">ArtGallery</NavLink>
                 </li>
               </ul>
             </nav>
@@ -38,6 +48,12 @@ const Home = () => {
         </Route>
         <Route path="/bookshelf">
           <BookShelf />
+        </Route>
+        <Route path="/useeffect-and-lifecycle">
+          <UseEffect />
+        </Route>
+        <Route path="/art-gallery">
+          <ArtGallery />
         </Route>
       </Suspense>
     </Switch>
@@ -57,7 +73,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="AppHeader">
         <div className="logo">
           <Link to="/">
             <span>React Apps</span>
