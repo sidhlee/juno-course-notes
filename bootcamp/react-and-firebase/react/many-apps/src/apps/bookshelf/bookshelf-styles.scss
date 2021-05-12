@@ -1,0 +1,90 @@
+.bookShelf {
+  background: var(--cl-off-white);
+  h2 {
+    margin: 1rem auto;
+  }
+  .bestsellerDate {
+    margin-bottom: 2rem;
+  }
+}
+
+.bookList {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.book {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 300px;
+  padding: 1rem;
+  background: white;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034);
+  overflow: hidden;
+  .bookTop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 0.5rem;
+    .bookImage {
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+    }
+    .btn {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+    .rank {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      span {
+        display: block;
+        text-align: left;
+      }
+    }
+  }
+
+  .bookImage {
+    width: 100%;
+    height: 200px;
+    img {
+      object-fit: cover;
+    }
+  }
+  .bookInfo {
+    text-align: left;
+
+    .author {
+      margin: 0.2em auto;
+      font-style: italic;
+    }
+    .rank {
+      span {
+        display: inline-block;
+        font-size: 0.8rem;
+        margin: 0.5rem;
+      }
+    }
+    .description {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.book.finished::before {
+  content: 'Finished';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: red;
+  color: white;
+
+  transform: rotate(-45deg) translate(-25%, -50%);
+  padding: 0.2em 3em;
+}

@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import './App.scss';
 import { Link, NavLink, Switch, Route, useLocation } from 'react-router-dom';
-import PropsAndState from './apps/propsAndState/PropsAndState';
+import BookShelf from './apps/bookshelf/BookShelf';
 
 const AnimalShelter = lazy(() => import('./apps/animal-shelter/AnimalShelter'));
 const MadProps = lazy(() => import('./apps/mad-props/MadProps'));
@@ -24,7 +24,7 @@ const Home = () => {
                   <NavLink to="/mad-props">MadProps</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/props-and-state">PropsAndState</NavLink>
+                  <NavLink to="/bookshelf">BookShelf feat. Firebase</NavLink>
                 </li>
               </ul>
             </nav>
@@ -36,8 +36,8 @@ const Home = () => {
         <Route path="/mad-props">
           <MadProps />
         </Route>
-        <Route path="/props-and-state">
-          <PropsAndState />
+        <Route path="/bookshelf">
+          <BookShelf />
         </Route>
       </Suspense>
     </Switch>
