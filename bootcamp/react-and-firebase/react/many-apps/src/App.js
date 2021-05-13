@@ -9,7 +9,7 @@ const UseEffect = lazy(() =>
   import('./apps/useEffect-and-lifecycle/UseEffect')
 );
 const ArtGallery = lazy(() => import('./apps/art-gallery/ArtGallery'));
-const MyBooks = lazy(() => import('./apps/mybooks/MyBooks'));
+const MyBooks = lazy(() => import('./apps/mybooks/components/MyBooks'));
 
 const Home = () => {
   return (

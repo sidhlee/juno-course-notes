@@ -1,5 +1,5 @@
 // https://firebase.google.com/docs/web/setup
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import 'firebase/database';
 
 const firebaseConfig = {
