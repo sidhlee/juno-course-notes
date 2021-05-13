@@ -9,6 +9,7 @@ const UseEffect = lazy(() =>
   import('./apps/useEffect-and-lifecycle/UseEffect')
 );
 const ArtGallery = lazy(() => import('./apps/art-gallery/ArtGallery'));
+const MyBooks = lazy(() => import('./apps/mybooks/MyBooks'));
 
 const Home = () => {
   return (
@@ -36,6 +37,9 @@ const Home = () => {
                 <li className="nav-item">
                   <NavLink to="/art-gallery">ArtGallery</NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink to="/mybooks">MyBooks</NavLink>
+                </li>
               </ul>
             </nav>
           </section>
@@ -54,6 +58,9 @@ const Home = () => {
         </Route>
         <Route path="/art-gallery">
           <ArtGallery />
+        </Route>
+        <Route path="/mybooks">
+          <MyBooks />
         </Route>
       </Suspense>
     </Switch>

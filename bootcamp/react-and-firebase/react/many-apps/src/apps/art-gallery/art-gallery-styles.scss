@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Open+Sans&display=swap');
 
 .ArtGallery {
+  text-align: initial;
   padding: 2rem 1rem;
   section {
     display: grid;
@@ -12,6 +13,9 @@
     text-align: center;
     font-family: 'Courgette', cursive;
     font-size: 65px;
+  }
+  .controls {
+    margin: 20px 0;
   }
 }
 
