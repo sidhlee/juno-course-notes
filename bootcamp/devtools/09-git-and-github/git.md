@@ -64,3 +64,9 @@ Because `git add .` DOES NOT update the deleted files and folders.
    s1 merges it
    s2 pulls from main
    repeat with roles reversed
+
+### Team Work
+
+Never ever push directly into main branch. Always make PR for review.
+
+- [Git Collaboration](https://github.com/HackerYou/bootcamp-notes/blob/master/git-and-command-line/git-collaboration.md#pull-requests)
