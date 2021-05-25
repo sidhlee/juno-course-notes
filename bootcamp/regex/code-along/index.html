@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regex Those Forms</title>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo&family=Overpass:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <section>
+    <h1>Order your eats!</h1>
+    <form id="orderForm">
+      <fieldset form="orderForm">
+        <legend>Your Personal Details</legend>
+        <div class="holdInput">
+          <label for="name">Name</label>
+          <div class="errorBlock">
+            <input autocomplete="off" type="text" id="name" />
+            <span id="nameError">Please enter your name</span>
+          </div>
+        </div>
+        <div class="holdInput">
+          <label for="telephone">Phone Number</label>
+          <div class="errorBlock">
+            <input autocomplete="off" type="tel" id="telephone" />
+            <span id="telError">Invalid phone number, please separate digits with spaces</span>
+          </div>
+        </div>
+        <div class="holdInput">
+          <label for="postalCode">Postal Code</label>
+          <div class="errorBlock">
+            <input autocomplete="off" type="text" id="postalCode" />
+            <span id="postalError">
+              Invalid postal code, please separate parts with a space
+            </span>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Your Order Details</legend>
+        <div class="holdTextarea">
+          <label for="note">Anything else you'd like us to know?</label>
+          <textarea rows="11" autocomplete="off" id="note" type="text"></textarea>
+        </div>
+      </fieldset>
+      <div>
+        <button type="submit">Order my noms!</button>
+      </div>
+    </form>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+  <script src="starter-script.js"></script>
+</body>
+
+</html>
