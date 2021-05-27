@@ -12,14 +12,22 @@ const MyBooks = () => {
 
     const dbRef = firebase.database().ref();
 
-    dbRef.on('value', (dataSnapshot) => {
-      const data = dataSnapshot.val();
-      const booksFromDb = Object.entries(data).map(([key, book]) => ({
-        key,
-        title: book,
-      }));
-      setBooks(booksFromDb);
+    const unsubscribe = dbRef.on('value', (dataSnapshot) => {
+      // dataSnapshot becomes undefined after unmount
+      // because cb passed to firebase will be called on unsubscribe
+      // just like how it's called when cb gets executed right after
+      // it is added
+      if (dataSnapshot) {
+        const data = dataSnapshot.val();
+        const booksFromDb = Object.entries(data).map(([key, book]) => ({
+          key,
+          title: book,
+        }));
+        setBooks(booksFromDb);
+      }
     });
+
+    return unsubscribe;
   }, []);
 
   const handleBookTitleInputChange = (e) => {

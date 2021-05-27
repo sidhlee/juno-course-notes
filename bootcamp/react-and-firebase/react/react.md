@@ -104,3 +104,48 @@ const Skill = (props) => {
 ## Hooks
 
 The Hook functions need to be called every time the component is rendered in order for them to do their magic. (edited)
+
+## Custom Hooks
+
+### Why return an array from custom hooks?
+
+When we want to abstract the state and handlers that update the state, we need to be able to rename the state and handler to be used in multiple places. We can rename the state to be more descriptive for the information we're storing.
+
+```jsx
+const FavoriteFriendForm = () => {
+  const [name, handleNameChange, clearNameInput] = useInputValue();
+  const [email, handleEmailChange, clearEmailInput] = useInputValue();
+  const [phone, handlePhoneChange, clearPhoneInput] = useInputValue();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // submit logic here
+    // reset form on submit
+    clearNameInput();
+    clearEmailInput();
+    clearPhoneInput();
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="name">What is your favorite Friend?</label>
+      <input id="name" type="text" value={name} onChange={handleNameChange} />
+      <label htmlFor="email">What is your favorite Friend?</label>
+      <input
+        id="email"
+        type="text"
+        value={email}
+        onChange={handleEmailChange}
+      />
+      <label htmlFor="phone">What is your favorite Friend?</label>
+      <input
+        id="phone"
+        type="text"
+        value={phone}
+        onChange={handlePhoneChange}
+      />
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+```

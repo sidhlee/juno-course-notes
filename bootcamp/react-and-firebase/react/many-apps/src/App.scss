@@ -1,7 +1,8 @@
 :root {
   --cl-off-white: #f8f8ff;
   --cl-off-black: #010b13;
-  --cl-accent: rgb(100, 187, 209);
+  --cl-accent: rgb(7, 171, 212);
+  --cl-accent-dark: rgb(2, 121, 151);
   --text-muted: #bbb;
   --text-inverted: white;
   --text-main: black;
@@ -67,9 +68,13 @@ a {
 }
 
 .nav-item {
-  margin: 0.5rem;
+  margin: 1rem;
+
   a {
-    color: var(--text-muted);
+    display: inline-block;
+    padding: 0.5em;
+    color: var(--text-main);
+    text-decoration: underline;
     &:hover,
     &.active {
       color: var(--cl-accent);

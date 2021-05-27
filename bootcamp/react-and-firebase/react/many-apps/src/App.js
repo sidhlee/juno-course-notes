@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import './App.scss';
 import { Link, NavLink, Switch, Route, useLocation } from 'react-router-dom';
 import BookShelf from './apps/bookshelf/BookShelf';
+import HooksVerse from './apps/hooks-verse/HooksVerse';
 
 const AnimalShelter = lazy(() => import('./apps/animal-shelter/AnimalShelter'));
 const MadProps = lazy(() => import('./apps/mad-props/MadProps'));
@@ -40,6 +41,9 @@ const Home = () => {
                 <li className="nav-item">
                   <NavLink to="/mybooks">MyBooks</NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink to="/hooks-verse">Hooks Verse</NavLink>
+                </li>
               </ul>
             </nav>
           </section>
@@ -61,6 +65,9 @@ const Home = () => {
         </Route>
         <Route path="/mybooks">
           <MyBooks />
+        </Route>
+        <Route path="/hooks-verse">
+          <HooksVerse />
         </Route>
       </Suspense>
     </Switch>
