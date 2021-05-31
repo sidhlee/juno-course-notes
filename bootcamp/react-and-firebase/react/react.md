@@ -109,7 +109,7 @@ The Hook functions need to be called every time the component is rendered in ord
 
 ### Why return an array from custom hooks?
 
-When we want to abstract the state and handlers that update the state, we need to be able to rename the state and handler to be used in multiple places. We can rename the state to be more descriptive for the information we're storing.
+When we want to abstract the state and handlers that update the state, we need to be able to rename the state and handler to be re-used in multiple places. We can rename the state to be more descriptive for the information we're storing.
 
 ```jsx
 const FavoriteFriendForm = () => {

@@ -11,6 +11,9 @@ const UseEffect = lazy(() =>
 );
 const ArtGallery = lazy(() => import('./apps/art-gallery/ArtGallery'));
 const MyBooks = lazy(() => import('./apps/mybooks/components/MyBooks'));
+const ApiCustomHook = lazy(() =>
+  import('./apps/api-custom-hook/ApiCustomHook')
+);
 
 const Home = () => {
   return (
@@ -44,6 +47,9 @@ const Home = () => {
                 <li className="nav-item">
                   <NavLink to="/hooks-verse">Hooks Verse</NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink to="/api-custom-hook">API Custom Hook</NavLink>
+                </li>
               </ul>
             </nav>
           </section>
@@ -68,6 +74,9 @@ const Home = () => {
         </Route>
         <Route path="/hooks-verse">
           <HooksVerse />
+        </Route>
+        <Route path="/api-custom-hook">
+          <ApiCustomHook />
         </Route>
       </Suspense>
     </Switch>

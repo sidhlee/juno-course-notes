@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 5rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: calc(100vh - 100px);
+}
+
+blockquote {
+  background-color: lightsteelblue;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+blockquote cite {
+  display: block;
+  text-align: right;
+  margin-top: 2em;
+}
+
+nav button {
+  font-size: 2em;
+}
