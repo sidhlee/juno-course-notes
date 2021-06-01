@@ -14,6 +14,9 @@ const MyBooks = lazy(() => import('./apps/mybooks/components/MyBooks'));
 const ApiCustomHook = lazy(() =>
   import('./apps/api-custom-hook/ApiCustomHook')
 );
+const ClassComponents = lazy(() =>
+  import('./apps/class-components/ClassComponents')
+);
 
 const Home = () => {
   return (
@@ -50,6 +53,9 @@ const Home = () => {
                 <li className="nav-item">
                   <NavLink to="/api-custom-hook">API Custom Hook</NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink to="/class-components">Class Components</NavLink>
+                </li>
               </ul>
             </nav>
           </section>
@@ -77,6 +83,9 @@ const Home = () => {
         </Route>
         <Route path="/api-custom-hook">
           <ApiCustomHook />
+        </Route>
+        <Route path="/class-components">
+          <ClassComponents />
         </Route>
       </Suspense>
     </Switch>
